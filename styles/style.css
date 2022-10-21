@@ -1,0 +1,51 @@
+*,
+*::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 30vw;
+    height: 60vh;
+    margin: auto;
+    position: relative;
+    perspective: 100px;
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.front {
+    z-index: 10;
+}
+.crystal {
+    max-width: 100%;
+    border-radius: 10em;
+    object-fit: cover;
+}
+.back {
+    background-color: paleturquoise;
+    box-shadow: 2px 3px 50px inset royalblue;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+.back h2 {
+    font-size: 90px;
+    background-color: aqua;
+    box-shadow: 1.5px 1.5px 1.5px paleturquoise inset;
+    text-shadow: 5px 5px 5px  darkred;
+}
+.back p {
+    background-color: aquamarine;
+    margin: 2em 0;
+}
+.container:hover .front {
+    transform: rotateY(90deg);
+}
